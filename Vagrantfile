@@ -30,10 +30,23 @@ Vagrant::Config.run do |config|
   # to this Vagrantfile), and adding some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
+    
+    chef.json.merge!({
+      :ubuntu_python_packages => ["python-setuptools", 
+                                  "python-pip", 
+                                  "python-dev", 
+                                  "libpq-dev"],
+      :pip_python_packages => {
+        :virtualenv => "1.5.1", 
+        :mercurial => "1.7"
+      }
+    })
+    
     chef.cookbooks_path = "cookbooks"
     chef.roles_path = "roles"
     chef.add_role "ubuntu"
     chef.add_recipe "vagrant_main"
+    
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
