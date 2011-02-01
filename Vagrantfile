@@ -32,7 +32,7 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     
     # Use Opscode and customized cookbooks
-    chef.cookbooks_path = "app-cookbooks", "cookbooks"
+    chef.cookbooks_path = "cookbooks", "app-cookbooks"
     chef.roles_path = "roles"
     chef.add_role "ubuntu"
     chef.add_recipe "vagrant_main"
