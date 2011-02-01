@@ -1,0 +1,42 @@
+{
+    "suggestions": {
+    },
+    "attributes": {
+    },
+    "maintainer_email": "sfw@simeonfosterwillbanks.com",
+    "conflicting": {
+    },
+    "dependencies": {
+      "python": [
+
+      ],
+      "apache2": [
+
+      ]
+    },
+    "recipes": {
+      "django": "Installs django via easy_install"
+    },
+    "providing": {
+    },
+    "platforms": {
+      "debian": [
+
+      ],
+      "ubuntu": [
+
+      ]
+    },
+    "license": "Apache 2.0",
+    "version": "0.0.1",
+    "replacing": {
+    },
+    "groupings": {
+    },
+    "name": "django",
+    "recommendations": {
+    },
+    "description": "Installs DJango",
+    "maintainer": "Simeon F. Willbanks",
+    "long_description": ""
+  }

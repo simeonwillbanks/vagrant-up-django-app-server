@@ -31,18 +31,8 @@ Vagrant::Config.run do |config|
   #
   config.vm.provision :chef_solo do |chef|
     
-    chef.json.merge!({
-      :ubuntu_python_packages => ["python-setuptools", 
-                                  "python-pip", 
-                                  "python-dev", 
-                                  "libpq-dev"],
-      :pip_python_packages => {
-        :virtualenv => "1.5.1", 
-        :mercurial => "1.7"
-      }
-    })
-    
-    chef.cookbooks_path = "cookbooks"
+    # Use Opscode and customized cookbooks
+    chef.cookbooks_path = "app-cookbooks", "cookbooks"
     chef.roles_path = "roles"
     chef.add_role "ubuntu"
     chef.add_recipe "vagrant_main"
