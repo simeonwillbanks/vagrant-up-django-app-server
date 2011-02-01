@@ -1,1 +1,5 @@
-require_recipe "vagrant_main::python"
+require_recipe "sqlite"
+require_recipe "python"
+require_recipe "apache2"
+require_recipe "apache2::mod_wsgi"
+require_recipe "django"
