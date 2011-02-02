@@ -31,6 +31,15 @@ Vagrant::Config.run do |config|
   #
   config.vm.provision :chef_solo do |chef|
     
+    # Django path, project and app
+    chef.json.merge!({
+      :django => {
+        :path => "/home/vagrant", 
+        :project => "mysite", 
+        :app => "polls"
+      }
+    })
+    
     # Use Opscode and customized cookbooks
     chef.cookbooks_path = "cookbooks", "app-cookbooks"
     chef.roles_path = "roles"

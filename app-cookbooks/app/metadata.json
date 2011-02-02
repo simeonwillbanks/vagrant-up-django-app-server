@@ -15,7 +15,7 @@
       ]
     },
     "recipes": {
-      "django": "Installs django via easy_install"
+      "app": "Creates Django project and app than configures the app"
     },
     "providing": {
     },
@@ -33,10 +33,10 @@
     },
     "groupings": {
     },
-    "name": "django",
+    "name": "app",
     "recommendations": {
     },
-    "description": "Installs Django",
+    "description": "Creates Django project and app than configures the app",
     "maintainer": "Simeon F. Willbanks",
     "long_description": ""
   }

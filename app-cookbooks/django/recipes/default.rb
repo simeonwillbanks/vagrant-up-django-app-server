@@ -1,5 +1,5 @@
 
-execute "easy_install_django" do
+execute "easy_install django" do
   command "easy_install Django"
   action :run
 end
