@@ -31,8 +31,11 @@ Vagrant::Config.run do |config|
   #
   config.vm.provision :chef_solo do |chef|
     
-    # Django path, project and app
     chef.json.merge!({
+      # Choose version control system
+      # "git", "subversion" or "mercurial"
+      :version_control => "git",
+      # Django path, project and app
       :django => {
         :path => "/home/vagrant", 
         :project => "mysite", 
