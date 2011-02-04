@@ -35,11 +35,16 @@ Vagrant::Config.run do |config|
       # Choose version control system
       # "git", "subversion" or "mercurial"
       :version_control => "git",
-      # Django path, project and app
+      # Django attributes
       :django => {
         :path => "/home/vagrant", 
         :project => "mysite", 
-        :app => "polls"
+        :app => "polls",
+        :settings => {
+          :admin => {:name => "Simeon F. Willbanks", 
+                     :email => "sfw@simeonfosterwillbanks.com"},
+          :database => {:engine => "sqlite3"}
+        }
       }
     })
     
