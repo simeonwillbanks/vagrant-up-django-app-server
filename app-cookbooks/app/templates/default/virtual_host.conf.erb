@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+   ServerName <%= @server_name %>
+
+   DocumentRoot <%= @django_path %>/public_html
+   
+   WSGIScriptAlias / <%= @wsgi_script_alias %>
+   <Directory <%= @directory %>>
+      Order allow,deny
+      Allow from all
+   </Directory>
+
+   Alias /robots.txt <%= @django_path %>/public_html/robots.txt
+   Alias /favicon.ico <%= @django_path %>/public_html/favicon.ico
+   Alias /media <%= @django_path %>/public_html/media 
+   
+   ErrorLog <%= @django_path %>/logs/error.log 
+   CustomLog <%= @django_path %>/logs/access.log combined
+</VirtualHost>
