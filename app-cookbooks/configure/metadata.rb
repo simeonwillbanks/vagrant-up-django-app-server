@@ -1,10 +1,10 @@
 maintainer        "Simeon F. Willbanks"
 maintainer_email  "sfw@simeonfosterwillbanks.com"
 license           "Apache 2.0"
-description       "Creates Django project and app than configures the app"
+description       "Create and configure Django project than app"
 version           "0.0.1"
 
-recipe "app", "Creates Django project and app than configures the app"
+recipe "configure", "Create and configure Django project than app"
 
 %w{ ubuntu debian }.each do |os|
   supports os

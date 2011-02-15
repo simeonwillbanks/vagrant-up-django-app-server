@@ -15,7 +15,7 @@
       ]
     },
     "recipes": {
-      "app": "Creates Django project and app than configures the app"
+      "app": "Create and configure Django project than app"
     },
     "providing": {
     },
@@ -33,10 +33,10 @@
     },
     "groupings": {
     },
-    "name": "app",
+    "name": "configure",
     "recommendations": {
     },
-    "description": "Creates Django project and app than configures the app",
+    "description": "Create and configure Django project than app",
     "maintainer": "Simeon F. Willbanks",
     "long_description": ""
   }
