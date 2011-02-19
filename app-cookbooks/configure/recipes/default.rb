@@ -22,6 +22,7 @@ template "edit settings.py" do
   variables(
     :name => node[:django][:settings][:admin][:name],
     :email => node[:django][:settings][:admin][:email],
+    :project => node[:django][:project],
     :engine => node[:django][:settings][:database][:engine],
     :database => "#{node[:django][:path]}/sqlite3.db",
     :secret_key => secret_key
@@ -49,7 +50,7 @@ execute "add #{node[:django][:app]} to INSTALLED_APPS" do
   user "vagrant"
   group "vagrant"
   cwd "#{node[:django][:path]}/#{node[:django][:project]}"
-  command "sed -i 's/INSTALLED_APPS = (/INSTALLED_APPS = ( \"#{node[:django][:app]}\",/g' settings.py"
+  command "sed -i 's/INSTALLED_APPS = (/INSTALLED_APPS = ( \"#{node[:django][:project]}.#{node[:django][:app]}\",/g' settings.py"
   action :run
 end
 
